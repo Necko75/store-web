@@ -1,4 +1,4 @@
-modules.exports = function () {
+module.exports = function (grunt) {
 	var app = 'app';
 	var dist = 'dist';
 	var tmp = 'tmp';
@@ -6,6 +6,13 @@ modules.exports = function () {
 	var components = 'bower_components';
 
 	grunt.initConfig({
-
+		clean: {
+			build: {
+				src: [ dist, tmp ]
+			}
+		}
 	});
+
+	grunt.loadNpmTasks('grunt-contrib-clean');
+	grunt.registerTask('default', [ 'clean' ]);
 };
