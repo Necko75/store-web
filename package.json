@@ -12,4 +12,7 @@
   },
   "author": "Simon Costa",
   "license": "ISC",
+  "dependencies": {
+    "grunt-cli": "^0.1.13"
+  }
 }
