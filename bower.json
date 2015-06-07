@@ -5,4 +5,11 @@
     "Simon Costa"
   ],
   "license": "MIT",
+  "dependencies": {
+    "angular": "~1.4.0",
+    "bootstrap": "~3.3.4",
+    "font-awesome": "~4.3.0",
+    "angular-ui-bootstrap": "~0.13.0",
+    "angular-ui-router": "~0.2.15"
+  }
 }
