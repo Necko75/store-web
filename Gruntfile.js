@@ -22,6 +22,33 @@ module.exports = function (grunt) {
 			}
 		},
 
+		ngtemplates: {
+			app: {
+				cwd: app,
+				src: [
+					'**/**.html',
+					'!index.html',
+				],
+				dest: tmp + '/templates.js',
+				options: {
+					htmlmin: { collapseWhitespace: true, collapseBooleanAttributes: true }
+				}
+			}
+			// vendor: {
+			// 	cwd: components + '/angular-ui-bootstrap',
+			// 	src: [
+			// 		'template/datepicker/*.html',
+			// 		'template/pagination/*.html',
+			// 		'template/carousel/*.html'
+			// 	],
+			// 	dest: tmp + '/templates.bootstrap.js',
+			// 	options: {
+			// 		module: 'app',
+			// 		htmlmin: { collapseWhitespace: true, collapseBooleanAttributes: true }
+			// 	}
+			// }
+		},
+
 		copy: {
 			app: {
 				files: [{
@@ -67,8 +94,9 @@ module.exports = function (grunt) {
 	grunt.loadNpmTasks('grunt-contrib-clean');
 	grunt.loadNpmTasks('grunt-contrib-less');
 	grunt.loadNpmTasks('grunt-contrib-copy');
+	grunt.loadNpmTasks('grunt-angular-templates');
 	grunt.loadNpmTasks('grunt-contrib-concat');
 
 	// registered tasks //
-	grunt.registerTask('default', [ 'clean', 'less', 'copy', 'concat' ]);
+	grunt.registerTask('default', [ 'clean', 'less', 'ngtemplates', 'copy', 'concat' ]);
 };
