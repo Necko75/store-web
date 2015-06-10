@@ -76,7 +76,8 @@ module.exports = function (grunt) {
 					app + '/**/*-service.js',
 					app + '/**/*-utils.js',
 					app + '/**/*-controller.js',
-					app + '/**/*-directive.js'
+					app + '/**/*-directive.js',
+					tmp + '/templates.js'
 				],
 				dest: dist + '/js/app.js'
 			},

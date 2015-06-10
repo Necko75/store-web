@@ -1,1 +1,2 @@
-app.controller('HeaderController', function ($scope) {});
+app.controller('HeaderController', function ($scope) {
+});

@@ -1,5 +1,6 @@
 var app = angular.module('app', [
-	'ui.router'
+	'ui.router',
+	'app.home'
 ]);
 
 app.constant('apiUrls', {
