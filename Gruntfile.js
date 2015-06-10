@@ -65,6 +65,14 @@ module.exports = function (grunt) {
 					src: ['fonts/*.*'],
 					dest: dist
 				}]
+			},
+			fontawesome: {
+				files: [{
+					expand: true,
+					cwd: components + '/font-awesome',
+					src: ['fonts/*.*'],
+					dest: dist
+				}]
 			}
 		},
 
