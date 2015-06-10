@@ -96,6 +96,29 @@ module.exports = function (grunt) {
 				],
 				dest: dist + '/js/vendor.js'
 			}
+		},
+
+		watch: {
+			css: {
+				files: [ app + '/**/*-module.less', app + '/components/**/*.less', app + '/**/*.less' ],
+				tasks: [ 'less' ]
+			},
+			js: {
+				files: [ app + '/**/*.js'],
+				tasks: [ 'concat:build' ]
+			},
+			partials: {
+				files: [ app + '/**/**.html', '!' + app + 'index.html' ],
+				tasks: [ 'ngtemplates', 'concat:build' ]
+			},
+			misc: {
+				files: [ app + '/index.html' ],
+				tasks: [ 'copy:app' ]
+			},
+			img: {
+				files: [ app + '/img/*.*' ],
+				tasks: [ 'copy:img' ]
+			}
 		}
 	});
 
@@ -105,7 +128,8 @@ module.exports = function (grunt) {
 	grunt.loadNpmTasks('grunt-contrib-copy');
 	grunt.loadNpmTasks('grunt-angular-templates');
 	grunt.loadNpmTasks('grunt-contrib-concat');
+	grunt.loadNpmTasks('grunt-contrib-watch');
 
 	// registered tasks //
-	grunt.registerTask('default', [ 'clean', 'less', 'ngtemplates', 'copy', 'concat' ]);
+	grunt.registerTask('default', [ 'clean', 'less', 'ngtemplates', 'copy', 'concat', 'watch' ]);
 };
