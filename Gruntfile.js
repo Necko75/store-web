@@ -12,12 +12,30 @@ module.exports = function (grunt) {
 			}
 		},
 
+		less: {
+			build: {
+				files: {
+					'dist/css/app.css': [
+						app + '/root/app-module.less'
+					]
+				}
+			}
+		},
+
 		copy: {
 			app: {
 				files: [{
 					expand: true,
 					flatten: true,
 					src: app + '/index.html',
+					dest: dist
+				}]
+			},
+			bootstrap: {
+				files: [{
+					expand: true,
+					cwd: components + '/bootstrap',
+					src: ['fonts/*.*'],
 					dest: dist
 				}]
 			}
@@ -47,9 +65,10 @@ module.exports = function (grunt) {
 
 	// loaded tasks //
 	grunt.loadNpmTasks('grunt-contrib-clean');
+	grunt.loadNpmTasks('grunt-contrib-less');
 	grunt.loadNpmTasks('grunt-contrib-copy');
 	grunt.loadNpmTasks('grunt-contrib-concat');
 
 	// registered tasks //
-	grunt.registerTask('default', [ 'clean', 'copy', 'concat' ]);
+	grunt.registerTask('default', [ 'clean', 'less', 'copy', 'concat' ]);
 };
