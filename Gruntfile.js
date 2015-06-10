@@ -12,6 +12,17 @@ module.exports = function (grunt) {
 			}
 		},
 
+		copy: {
+			app: {
+				files: [{
+					expand: true,
+					flatten: true,
+					src: app + '/index.html',
+					dest: dist
+				}]
+			}
+		},
+
 		concat: {
 			build: {
 				src: [
@@ -21,7 +32,6 @@ module.exports = function (grunt) {
 					app + '/**/*-utils.js',
 					app + '/**/*-controller.js',
 					app + '/**/*-directive.js'
-
 				],
 				dest: dist + '/js/app.js'
 			},
@@ -37,8 +47,9 @@ module.exports = function (grunt) {
 
 	// loaded tasks //
 	grunt.loadNpmTasks('grunt-contrib-clean');
+	grunt.loadNpmTasks('grunt-contrib-copy');
 	grunt.loadNpmTasks('grunt-contrib-concat');
 
 	// registered tasks //
-	grunt.registerTask('default', [ 'clean', 'concat' ]);
+	grunt.registerTask('default', [ 'clean', 'copy', 'concat' ]);
 };
