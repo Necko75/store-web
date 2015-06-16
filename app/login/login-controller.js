@@ -1,10 +1,10 @@
 login.controller('LoginController', function ($scope, Sessions) {
-	var user = {};
+	$scope.user = {};
 
 	$scope.submit = function () {
-		Sessions.loginAction(user).then(
+		Sessions.loginAction($scope.user).then(
 			function (user) {
-				console.log(user);
+				console.log($scope.user);
 			},
 			function (err) {
 				console.log(err);
