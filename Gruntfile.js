@@ -73,6 +73,14 @@ module.exports = function (grunt) {
 					src: ['fonts/*.*'],
 					dest: dist
 				}]
+			},
+			material: {
+				files: [{
+					expand: true,
+					cwd: components + '/bootstrap-material-design',
+					src: ['fonts/*.*'],
+					dest: dist
+				}]
 			}
 		},
 

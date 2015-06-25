@@ -10,6 +10,9 @@
     "bootstrap": "~3.3.4",
     "font-awesome": "~4.3.0",
     "angular-ui-bootstrap": "~0.13.0",
-    "angular-ui-router": "~0.2.15"
+    "angular-ui-router": "~0.2.15",
+    "bower": "*",
+    "install": "~1.0.4",
+    "bootstrap-material-design": "~0.3.0"
   }
 }
