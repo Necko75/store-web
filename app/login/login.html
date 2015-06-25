@@ -1,21 +1,22 @@
 <div class="login-page">
-	<div class="login-header">
-		<h1>
-			Login page
-		</h1>
-	</div>
-
-	<div class="login-form">
-		<form ng-submit="submit()">
-			<div class="form-group">
-				<label for="exampleInputEmail1">Email address</label>
-				<input type="email" ng-model="user.email" class="form-control" id="exampleInputEmail1" placeholder="Enter email">
+	<div class="row">
+		<div class="container login">
+			<div class="col-md-12">
+				<div class="well bs-component">
+					<form name="formLogin" ng-submit="submit()">
+						<div class="form-group has-success has-feedback" ng-class="{ 'has-error': formLogin.userEmail.$error.required }">
+							<label for="emailInput">Email address</label>
+							<input type="email" name="userEmail" ng-model="user.email" class="form-control" placeholder="Enter email" required>
+							<span class="glyphicon glyphicon-ok form-control-feedback" aria-hidden="true"></span>
+						</div>
+						<div class="form-group">
+							<label for="passwordInput">Password</label>
+							<input type="password" ng-model="user.password" class="form-control" placeholder="Password" required>
+						</div>
+						<button type="submit" class="btn btn-success btn-raised">Submit</button>
+					</form>
+				</div>
 			</div>
-			<div class="form-group">
-				<label for="exampleInputPassword1">Password</label>
-				<input type="password" ng-model="user.password" class="form-control" id="exampleInputPassword1" placeholder="Password">
-			</div>
-			<button type="submit" class="btn btn-default">Submit</button>
-		</form>
+		</div>
 	</div>
 <div/>
