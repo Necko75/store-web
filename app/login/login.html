@@ -1,22 +1,25 @@
 <div class="login-page">
-	<div class="row">
-		<div class="container login">
-			<div class="col-md-12">
+	<div class="container login">
+		<div class="row">
+			<div class="col-xs-6 col-md-6 col-xs-offset-3">
 				<div class="well bs-component">
-					<form name="formLogin" ng-submit="submit()">
-						<div class="form-group has-success has-feedback" ng-class="{ 'has-error': formLogin.userEmail.$error.required }">
-							<label for="emailInput">Email address</label>
-							<input type="email" name="userEmail" ng-model="user.email" class="form-control" placeholder="Enter email" required>
-							<span class="glyphicon glyphicon-ok form-control-feedback" aria-hidden="true"></span>
-						</div>
-						<div class="form-group">
-							<label for="passwordInput">Password</label>
-							<input type="password" ng-model="user.password" class="form-control" placeholder="Password" required>
-						</div>
-						<button type="submit" class="btn btn-success btn-raised">Submit</button>
+					<form role="form" name="loginForm" ng-submit="submit()" autocomplete="off">
+						<fieldset ng-disabled="login.ongoing">
+							<legend>Login</legend>
+							<div class="form-group has-feedback" ng-class="{ 'has-error': loginForm.email.$dirty && loginForm.email.$invalid }">
+								<label for="email" class="control-label">Email address</label>
+								<input type="email" name="email" ng-model="user.email" class="form-control" placeholder="Enter email" required autofocus>
+							</div>
+							<div class="form-group">
+								<label for="passwordInput">Password</label>
+								<input type="password" ng-model="user.password" class="form-control" placeholder="Password" required>
+							</div>
+							<a href="">Mot de passe perdu ?</a>
+							<button type="submit" class="btn btn-success btn-raised pull-right" ng-disabled="loginForm.$invalid">Submit</button>
+						</fieldset>
 					</form>
 				</div>
 			</div>
 		</div>
 	</div>
-<div/>
+</div>
