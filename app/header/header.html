@@ -17,7 +17,7 @@
 					<a ui-sref="my-art">My Art Galleries</a>
 				</li>
 				<li ng-if="account.token" ui-sref-active="active">
-					<button ng-click="logout()" type="button" class="btn btn-danger pull-right">Logout</button>
+					<button ng-click="logout()" type="button" class="btn btn-danger pull-right">{{ translation.header.nav.LOGOUT }}</button>
 				</li>
 				<li ng-if="!account.token" ui-sref-active="active"><a ui-sref="signup">{{ translation.header.nav.SIGNUP }}</a></li>
 			</ul>

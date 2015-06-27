@@ -2,7 +2,8 @@
 	"header": {
 		"nav": {
 			"LOGIN": "Login",
-			"SIGNUP": "Sign Up"
+			"SIGNUP": "Sign Up",
+			"LOGOUT": "Logout"
 		}
 	},
 

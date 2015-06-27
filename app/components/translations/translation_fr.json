@@ -2,7 +2,8 @@
 	"header": {
 		"nav": {
 			"LOGIN": "Connexion",
-			"SIGNUP": "Inscription"
+			"SIGNUP": "Inscription",
+			"LOGOUT": "Déconnexion"
 		}
 	},
 
