@@ -14,7 +14,7 @@
 			<ul class="nav navbar-nav navbar-right">
 				<li ng-if="!account.token" ui-sref-active="active"><a ui-sref="login">{{ translation.header.nav.LOGIN }}</a></li>
 				<li ng-if="account.token" ui-sref-active="active">
-					<a ui-sref="my-art">My Art Galleries</a>
+					<a ui-sref="myspace.profile">My Space</a>
 				</li>
 				<li ng-if="account.token" ui-sref-active="active">
 					<button ng-click="logout()" type="button" class="btn btn-danger pull-right">{{ translation.header.nav.LOGOUT }}</button>
