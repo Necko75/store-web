@@ -13,6 +13,7 @@
     "angular-ui-router": "~0.2.15",
     "bower": "*",
     "install": "~1.0.4",
-    "bootstrap-material-design": "~0.3.0"
+    "bootstrap-material-design": "~0.3.0",
+    "angular-local-storage": "~0.2.2"
   }
 }

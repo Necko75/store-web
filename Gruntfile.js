@@ -100,7 +100,8 @@ module.exports = function (grunt) {
 			vendor: {
 				src: [
 					components + '/angular/angular.js',
-					components + '/angular-ui-router/release/angular-ui-router.js'
+					components + '/angular-ui-router/release/angular-ui-router.js',
+					components + '/angular-local-storage/dist/angular-local-storage.js'
 				],
 				dest: dist + '/js/vendor.js'
 			}
