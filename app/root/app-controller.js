@@ -3,6 +3,10 @@ app.controller('AppController', function ($scope, $state, accountData, localStor
 
 	var initSession = function () {
 		$scope.account = JSON.parse(localStorageService.get('session'));
+	};
+
+	var goHome = function () {
+		$state.go('home');
 	}
 
 	if ($scope.account) initSession();
@@ -10,12 +14,12 @@ app.controller('AppController', function ($scope, $state, accountData, localStor
 
 	$scope.$on('account-login', function () {
 		initSession();
-		$state.go('home');
+		goHome();
 	});
 
 	$scope.$on('account-logout', function () {
 		localStorageService.clearAll();
 		$scope.account = {};
-		$state.go('home');
+		goHome();
 	});
 });
