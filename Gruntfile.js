@@ -81,6 +81,14 @@ module.exports = function (grunt) {
 					src: ['fonts/*.*'],
 					dest: dist
 				}]
+			},
+			translation: {
+				files: [{
+					expand: true,
+					cwd: app + '/components',
+					src: ['translations/*.json'],
+					dest: dist
+				}]
 			}
 		},
 
@@ -93,6 +101,7 @@ module.exports = function (grunt) {
 					app + '/**/*-utils.js',
 					app + '/**/*-controller.js',
 					app + '/**/*-directive.js',
+					app + '/**/*-filter.js',
 					tmp + '/templates.js'
 				],
 				dest: dist + '/js/app.js'
@@ -100,6 +109,7 @@ module.exports = function (grunt) {
 			vendor: {
 				src: [
 					components + '/angular/angular.js',
+					components + '/angular-resource/angular-resource.js',
 					components + '/angular-ui-router/release/angular-ui-router.js',
 					components + '/angular-local-storage/dist/angular-local-storage.js'
 				],
@@ -127,6 +137,10 @@ module.exports = function (grunt) {
 			img: {
 				files: [ app + '/img/*.*' ],
 				tasks: [ 'copy:img' ]
+			},
+			translations: {
+				files: [ app + '/components/translations/*.json' ],
+				tasks: [ 'copy:translation' ]
 			}
 		}
 	});

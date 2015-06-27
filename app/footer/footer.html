@@ -1,2 +1,10 @@
-<footer class="footer">
-</footer>
+<div class="footer well-material-orange-A400">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-2">
+				<select class="form-control" ng-options="language.name for language in languages" ng-model="myLanguage" ng-change="changeLanguage(myLanguage)">
+				</select>
+			</div>
+		</div>
+	</div>
+</div>
