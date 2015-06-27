@@ -1,4 +1,26 @@
 {
-	"LOGIN": "Connexion",
-	"SIGNUP": "Inscription"
+	"header": {
+		"nav": {
+			"LOGIN": "Connexion",
+			"SIGNUP": "Inscription"
+		}
+	},
+
+	"login": {
+		"form": {
+			"TITLE": "Connexion",
+			"EMAIL": "Adresse email",
+			"PASSWORD": "Mot de passe"
+		}
+	},
+
+	"register": {
+		"form": {
+			"TITLE": "Inscription",
+			"FIRSTNAME": "Prénom",
+			"LASTNAME": "Nom",
+			"EMAIL": "Email",
+			"PASSWORD": "Mot de passe"	
+		}
+	}
 }

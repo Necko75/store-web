@@ -12,14 +12,14 @@
 
 		<div class="collapse navbar-collapse">
 			<ul class="nav navbar-nav navbar-right">
-				<li ng-if="!account.token" ui-sref-active="active"><a ui-sref="login">{{ translation.LOGIN }}</a></li>
+				<li ng-if="!account.token" ui-sref-active="active"><a ui-sref="login">{{ translation.header.nav.LOGIN }}</a></li>
 				<li ng-if="account.token" ui-sref-active="active">
 					<a ui-sref="my-art">My Art Galleries</a>
 				</li>
 				<li ng-if="account.token" ui-sref-active="active">
 					<button ng-click="logout()" type="button" class="btn btn-danger pull-right">Logout</button>
 				</li>
-				<li ng-if="!account.token" ui-sref-active="active"><a ui-sref="signup">{{ translation.SIGNUP }}</a></li>
+				<li ng-if="!account.token" ui-sref-active="active"><a ui-sref="signup">{{ translation.header.nav.SIGNUP }}</a></li>
 			</ul>
 		</div>
 

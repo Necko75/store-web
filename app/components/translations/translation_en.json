@@ -1,4 +1,26 @@
 {
-	"LOGIN": "Login",
-	"SIGNUP": "Sign Up"
+	"header": {
+		"nav": {
+			"LOGIN": "Login",
+			"SIGNUP": "Sign Up"
+		}
+	},
+
+	"login": {
+		"form": {
+			"TITLE": "Login",
+			"EMAIL": "Email address",
+			"PASSWORD": "Password"
+		}
+	},
+
+	"register": {
+		"form": {
+			"TITLE": "Sign Up",
+			"FIRSTNAME": "Firstname",
+			"LASTNAME": "Lastname",
+			"EMAIL": "Email",
+			"PASSWORD": "Password"	
+		}
+	}
 }

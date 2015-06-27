@@ -4,16 +4,16 @@
 			<div class="well">
 				<form role="form" name="loginForm" ng-submit="submit()" autocomplete="off">
 					<fieldset ng-disabled="login.ongoing">
-						<legend>Login</legend>
+						<legend>{{ translation.login.form.TITLE }}</legend>
 						<div class="form-group has-feedback" ng-class="{ 'has-error': loginForm.email.$dirty && loginForm.email.$invalid }">
-							<label for="email" class="control-label">Email address</label>
+							<label for="email" class="control-label">{{ translation.login.form.EMAIL }}</label>
 							<input type="email" name="email" ng-model="user.email" class="form-control" placeholder="Enter email" required autofocus>
 						</div>
 						<div class="form-group">
-							<label for="passwordInput">Password</label>
+							<label for="passwordInput">{{ translation.login.form.PASSWORD }}</label>
 							<input type="password" ng-model="user.password" class="form-control" placeholder="Password" required>
 						</div>
-						<a href="">Mot de passe perdu ?</a>
+						<a href="">Password forgotten ?</a>
 						<button type="submit" class="btn btn-success pull-right" ng-disabled="loginForm.$invalid">Submit</button>
 					</fieldset>
 				</form>
