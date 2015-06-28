@@ -1,0 +1,43 @@
+<div class="container gallery-create">
+	<div class="row">
+		<div class="col-xs-12 col-md-12">
+			<div class="alert alert-info">
+				Create your own gallery uploading your artwork.
+			</div>
+			<form role="form" name="uploadForm" autocomplete="off">
+
+				<div class="well">
+					<fieldset>
+						<legend>GALLERY</legend>
+							<div class="form-group has-feedback">
+								<label for="galleryName" class="control-label">Gallery name</label>
+								<input type="text" name="galleryName" ng-model="gallery.name" class="form-control" placeholder="Enter gallery name" required autofocus>
+							</div>
+					</fieldset>
+				</div>
+				<div class="well" ng-show="gallery.name">
+					<fieldset>
+						<legend>UPLOADS</legend>
+							<div class="form-group">
+								<div class="btn btn-info" ngf-select ng-model="afile">Browse...</div>
+							</div>
+					</fieldset>
+					<div class="row">
+						<div class="col-md-3" ng-repeat="f in gallery.files">
+							<img ngf-src="f" ngf-default-src="'/thumb.jpg'" ngf-accept="'image/*'" style="width: 100%;">
+							<span>
+								{{ f.name }}
+							</span>
+						</div>
+					</div>
+					<!-- <ul ng-show="gallery.files.length > 0">
+						<li ng-repeat="f in gallery.files" style="font:smaller">
+							{{ f.name }}
+							<img ngf-src="f" ngf-default-src="'/thumb.jpg'" ngf-accept="'image/*'">
+						</li>
+					</ul> -->
+				</div>
+			</form>
+		</div>
+	</div>
+</div>

@@ -111,7 +111,8 @@ module.exports = function (grunt) {
 					components + '/angular/angular.js',
 					components + '/angular-resource/angular-resource.js',
 					components + '/angular-ui-router/release/angular-ui-router.js',
-					components + '/angular-local-storage/dist/angular-local-storage.js'
+					components + '/angular-local-storage/dist/angular-local-storage.js',
+					components + '/ng-file-upload/ng-file-upload.js'
 				],
 				dest: dist + '/js/vendor.js'
 			}

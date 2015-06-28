@@ -2,11 +2,14 @@ var app = angular.module('app', [
 	'ngResource',
 	'ui.router',
 	'LocalStorageModule',
+	'ngFileUpload',
 	'app.home',
 	'app.signup',
 	'app.login',
 	'app.myspace',
-	'app.myspaceProfile'
+	'app.myspaceProfile',
+	'app.myspaceGalleries',
+	'app.myspaceGalleryCreate'
 ]);
 
 app.constant('apiUrls', {

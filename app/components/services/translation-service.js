@@ -1,7 +1,9 @@
 app.service('translationService', function ($resource) {
 	
 	this.getTranslation = function($scope, language) {
-		$resource('../translations/translation_' + language + '.json').get(function (data) {
+		var url = '../translations/translation_' + language + '.json';
+		
+		return $resource(url, {}, { get: { cache: true, method: 'get' } }).get(function (data) {
 			$scope.translation = data;
 		});
 	};
