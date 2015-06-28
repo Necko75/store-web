@@ -30,6 +30,11 @@
 							</span>
 						</div>
 					</div>
+					<div class="row" ng-if="gallery.files.length">
+						<div class="col-md-12">
+							<button type="button" class="btn btn-success" ng-click="createGallery()">CREATE</button>
+						</div>
+					</div>
 					<!-- <ul ng-show="gallery.files.length > 0">
 						<li ng-repeat="f in gallery.files" style="font:smaller">
 							{{ f.name }}

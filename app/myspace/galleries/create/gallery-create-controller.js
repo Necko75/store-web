@@ -1,9 +1,16 @@
-myspaceGalleryCreate.controller('GalleryCreateController', function ($scope, Upload) {
+myspaceGalleryCreate.controller('GalleryCreateController', function ($scope, apiUrls, Upload) {
 	$scope.gallery = {
 		files: []
 	};
 
 	$scope.upload = function () {
+		console.log('uploading');
+
+		Upload.upload({
+			url: apiUrls.base + '/account/galleries/create',
+			file: $scope.gallery.files,
+			method: 'POST'
+		});
 		// if (files && files.length) {
 		// 	for (var i = 0; i < files.length; i++) {
 		// 		var file = files[i];
@@ -22,11 +29,16 @@ myspaceGalleryCreate.controller('GalleryCreateController', function ($scope, Upl
 		// }
 	};
 
+	$scope.createGallery = function () {
+		if (!$scope.gallery.name || !$scope.gallery.files.length) return false;
+
+		$scope.upload();
+	}
+
 	$scope.$watch('afile', function () {
 		if (!$scope.afile) return false;
 
 		$scope.gallery.files.push($scope.afile[0]);
 		console.log($scope.gallery.files);
-		$scope.upload($scope.gallery.files);
 	});
 });
