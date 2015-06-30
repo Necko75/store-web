@@ -10,6 +10,9 @@ myspaceGalleryCreate.controller('GalleryCreateController', function ($scope, api
 			url: apiUrls.base + '/account/galleries/create',
 			file: $scope.gallery.files,
 			method: 'POST'
+		}).success(function (data) {
+			// data base64 content //
+			$scope.testData = data;
 		});
 		// if (files && files.length) {
 		// 	for (var i = 0; i < files.length; i++) {
@@ -39,6 +42,5 @@ myspaceGalleryCreate.controller('GalleryCreateController', function ($scope, api
 		if (!$scope.afile) return false;
 
 		$scope.gallery.files.push($scope.afile[0]);
-		console.log($scope.gallery.files);
 	});
 });
