@@ -4,32 +4,14 @@ myspaceGalleryCreate.controller('GalleryCreateController', function ($scope, api
 	};
 
 	$scope.upload = function () {
-		console.log('uploading');
-
 		Upload.upload({
-			url: apiUrls.base + '/account/galleries/create',
+			url: apiUrls.base + '/account/galleries',
 			file: $scope.gallery.files,
-			method: 'POST'
+			fields: { 'galleryName': $scope.gallery.name }
 		}).success(function (data) {
 			// data base64 content //
-			$scope.testData = data;
+			// $scope.testData = data;
 		});
-		// if (files && files.length) {
-		// 	for (var i = 0; i < files.length; i++) {
-		// 		var file = files[i];
-		// 		console.log(file);
-		// 		Upload.upload({
-		// 			url: 'upload/url',
-		// 			fields: {'username': $scope.username},
-		// 			file: file
-		// 		}).progress(function (evt) {
-		// 			var progressPercentage = parseInt(100.0 * evt.loaded / evt.total);
-		// 			console.log('progress: ' + progressPercentage + '% ' + evt.config.file.name);
-		// 		}).success(function (data, status, headers, config) {
-		// 			console.log('file ' + config.file.name + 'uploaded. Response: ' + data);
-		// 		});
-		// 	}
-		// }
 	};
 
 	$scope.createGallery = function () {
