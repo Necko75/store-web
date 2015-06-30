@@ -74,14 +74,6 @@ module.exports = function (grunt) {
 					dest: dist
 				}]
 			},
-			material: {
-				files: [{
-					expand: true,
-					cwd: components + '/bootstrap-material-design',
-					src: ['fonts/*.*'],
-					dest: dist
-				}]
-			},
 			translation: {
 				files: [{
 					expand: true,
