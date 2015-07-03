@@ -9,6 +9,7 @@ var app = angular.module('app', [
 	'app.myspace',
 	'app.myspaceProfile',
 	'app.myspaceGalleries',
+	'app.myspaceGalleryList',
 	'app.myspaceGalleryCreate'
 ]);
 
