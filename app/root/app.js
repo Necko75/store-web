@@ -22,7 +22,7 @@ app.run(function ($location, $rootScope, $state) {
 	});
 });
 
-app.config(function ($locationProvider, $stateProvider, $urlRouterProvider, localStorageServiceProvider) {
+app.config(function ($locationProvider, $stateProvider, $httpProvider, $urlRouterProvider, localStorageServiceProvider) {
 	$locationProvider.hashPrefix('!');
 
 	$stateProvider.state('app', {
@@ -40,4 +40,5 @@ app.config(function ($locationProvider, $stateProvider, $urlRouterProvider, loca
 	$urlRouterProvider.otherwise('/');
 
 	localStorageServiceProvider.setPrefix('seemypaints');
+	$httpProvider.interceptors.push('authInterceptor');
 });
