@@ -6,9 +6,15 @@
 
 		<div class="results">
 			<div class="row">
-				<div class="gallery col-md-6" ng-repeat="gallery in galleries">
+				<div class="gallery col-md-12" ng-repeat="gallery in galleries">
 					{{ gallery.name }}
 					{{ gallery._id }}
+					<div class="row">
+						<div ng-if="gallery.uploads.length" class="col-md-4" ng-repeat="upload in gallery.uploads">
+							<img src="/api/medias/galleries/{{ gallery._id }}/{{ upload.filename }}" style="width: 100%" />
+							{{ upload.filename }}
+						</div>
+					</div>
 				</div>
 			</div>
 		</div>
