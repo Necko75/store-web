@@ -9,8 +9,6 @@ myspaceGalleryCreate.controller('GalleryCreateController', function ($scope, api
 			file: $scope.gallery.files,
 			fields: { 'galleryName': $scope.gallery.name }
 		}).success(function (data) {
-			// data base64 content //
-			// $scope.testData = data;
 		});
 	};
 

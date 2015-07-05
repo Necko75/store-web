@@ -35,12 +35,19 @@
 							<button type="button" class="btn btn-success" ng-click="createGallery()">CREATE & UPLOAD</button>
 						</div>
 					</div>
-					<!-- <ul ng-show="gallery.files.length > 0">
-						<li ng-repeat="f in gallery.files" style="font:smaller">
-							{{ f.name }}
-							<img ngf-src="f" ngf-default-src="'/thumb.jpg'" ngf-accept="'image/*'">
-						</li>
-					</ul> -->
+
+					<div class="row">
+						<div class="col-md-8 drop-box" ngf-drop ng-model="myFiles" ngf-multiple="true">
+							Drop files here
+						</div>
+					</div>
+
+					<div class="row">
+						<div class="col-md-3" ng-if="myFiles.length" ng-repeat="file in myFiles">
+							<img ngf-src="file" ngf-accept="'image/*'" style="width: 100%;">
+						</div>
+					</div>
+					
 				</div>
 			</form>
 
