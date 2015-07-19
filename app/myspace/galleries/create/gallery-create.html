@@ -18,29 +18,27 @@
 				<div class="well">
 					<fieldset>
 						<legend>UPLOADS</legend>
-							<div class="form-group">
-								<div class="btn btn-info" ngf-select ng-model="afile">Browse...</div>
+						<div class="row">
+							<div class="col-md-3" ng-repeat="f in gallery.files">
+								<img ngf-src="f" ngf-default-src="'/thumb.jpg'" ngf-accept="'image/*'" style="width: 100%;">
+								<span>
+									{{ f.name }}
+								</span>
 							</div>
-					</fieldset>
-					<div class="row">
-						<div class="col-md-3" ng-repeat="f in gallery.files">
-							<img ngf-src="f" ngf-default-src="'/thumb.jpg'" ngf-accept="'image/*'" style="width: 100%;">
-							<span>
-								{{ f.name }}
-							</span>
 						</div>
-					</div>
-					<div class="row" ng-if="gallery.files.length">
-						<div class="col-md-12">
-							<button type="button" class="btn btn-success" ng-click="createGallery()">CREATE & UPLOAD</button>
-						</div>
-					</div>
 
-					<div class="row">
-						<div class="col-md-8 drop-box" ngf-drop ng-model="myFiles" ngf-multiple="true">
-							Drop files here
+						<div class="row">
+							<div class="col-md-8 drop-box" ngf-drop ng-model="gallery.files" ngf-multiple="true">
+								Drop files here
+							</div>
 						</div>
-					</div>
+
+						<div class="row" ng-if="gallery.files.length">
+							<div class="col-md-12">
+								<button type="button" class="btn btn-success" ng-click="createGallery()">CREATE & UPLOAD</button>
+							</div>
+						</div>
+					</fieldset>
 
 					<div class="row">
 						<div class="col-md-3" ng-if="myFiles.length" ng-repeat="file in myFiles">
@@ -50,11 +48,6 @@
 					
 				</div>
 			</form>
-
-			<!-- <div ng-if="testData">
-				<img data-ng-src="data:image/jpeg;base64,{{ testData }}"/>
-			</div> -->
-
 		</div>
 	</div>
 </div>

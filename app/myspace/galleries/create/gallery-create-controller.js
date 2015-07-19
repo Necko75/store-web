@@ -18,9 +18,6 @@ myspaceGalleryCreate.controller('GalleryCreateController', function ($scope, api
 		$scope.upload();
 	}
 
-	$scope.$watch('afile', function () {
-		if (!$scope.afile) return false;
-
-		$scope.gallery.files.push($scope.afile[0]);
+	$scope.$watchCollection('gallery.files', function (newVal, oldVal) {
 	});
 });
